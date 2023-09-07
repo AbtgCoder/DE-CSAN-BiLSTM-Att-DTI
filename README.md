@@ -31,11 +31,76 @@ Follow the steps below to set up and run the project:
    cd DE-CSAN-BiLSTM-Att-DTI
    ```
 
-3. Train(optional) and Evaluate Model:
-   - Run the `main.py` script train the model and evaluate its performance. The DataName , hyperparameter_configuration and MODEL_PATH variables can be modified if only evaluation needs to be performed.
-   ```shell
-   python main.py
-   ```
+## Usage
+
+To run the script, use the following command-line arguments:
+
+- `-T` or `--train`: Enable training mode.
+
+Select one of the following datasets:
+
+- `-D` or `--davis`: Select the Davis dataset.
+- `-K` or `--kiba`: Select the Kiba dataset.
+- `-B` or `--binddb`: Select the BindDB dataset.
+
+If no dataset argument is provided, Kiba dataset is selected by default.
+
+
+### Examples
+
+#### Training
+
+To enable training on the Davis dataset, run:
+
+```shell
+python main.py -T -D
+```
+
+To enable training on the Kiba dataset, run:
+```shell
+python main.py -T -K
+```
+
+To enable training on the BindDB dataset, run:
+```shell
+python main.py -T -B
+```
+
+#### Validation
+To perform validation without training, omit the -T flag. By default, validation will be done on the Kiba dataset:
+```shell
+python main.py
+```
+
+To enable validation on the Davis dataset, run:
+
+```shell
+python main.py -T -D
+```
+
+To enable validation on the Kiba dataset, run:
+```shell
+python main.py -T -K
+```
+
+To enable validation on the BindDB dataset, run:
+```shell
+python main.py -T -B
+```
+
+## Model Paths and Hyperparameters
+The script sets model paths and hyperparameters based on your dataset selection. Here are the default paths for each dataset:
+
+- Davis dataset: ./final_results/SMILES/Evolutionary/DE/Davis 89.85/Davis_[32, 64, 3, 60, 512, 256, 0.2]-v3.h5
+- Kiba dataset: ./final_results/SMILES/Evolutionary/DE/Kiba 97.10/Kiba_[32, 64, 4, 60, 512, 256, 0.2]_smiles-v1.h5
+- BindDB dataset: ./final_results/SMILES/Evolutionary/DE/BindDB 84.8/BindDB_(NCFD_32,NCFP_64,CFSD_4,CFSP_4,LSTMdim_60,NFCL_[512, 256],DRFCL_0.2)-v0.h5
+
+## Selected Dataset
+The script will display the selected dataset and mode when executed. For example:
+```shell
+>>> Selected Dataset: Davis
+>>> Training Enabled: True
+```
 
 ## File Descriptions
 
