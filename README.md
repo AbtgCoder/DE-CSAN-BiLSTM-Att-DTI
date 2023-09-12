@@ -8,14 +8,8 @@ This repository contains code for training and evaluating a DE-based CSAN-BiLSTM
 
 Before running the code, ensure you have the following dependencies installed:
 
-- Python (version 3.6 or higher)
-- TensorFlow (version 2.x)
-- NumPy
-- Gensim
-- Pandas
-- deap
-- Matplotlib
-- scikit-learn
+- Python (version 3.7)
+- conda
 
 ## Getting Started
 
@@ -30,6 +24,22 @@ Follow the steps below to set up and run the project:
    ```shell
    cd DE-CSAN-BiLSTM-Att-DTI
    ```
+
+3. Create a virtual enviornment using conda.
+   ```shell
+   conda create -n your-environment-name python=3.7
+   ```
+
+4. switch to newly created enviornment.
+   ```shell
+   conda activate your-environment-name
+   ```
+
+5. Install the dependencies in your enviornment.
+   ```shell
+   pip install -r requirements.txt
+   ```
+
 
 ## Usage
 
